@@ -39,8 +39,8 @@ try {
     //Ejempo: consultar datos
     $stmt = $pdo->query('SELECT * FROM prueba;');
     $filas=$stmt->fetchAll();
-    foreach($filas as $fila){
-      echo "$fila['id'] -- $fila['comentario']";
+    foreach($filas as $row){
+      echo "fila: ".$row['id']." -- ".$row['comentario'];
     }
       
 } catch (PDOException $e) {
