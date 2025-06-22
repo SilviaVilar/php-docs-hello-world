@@ -33,7 +33,7 @@ try {
     // Ejemplo: consulta sencilla
     $stmt = $pdo->query('SELECT NOW() AS fecha_actual;');
     $fila = $stmt->fetch();
-    echo "Conectado correctamente. Hora del servidor: " . $fila['fecha_actual'];
+    echo "Conectado correctamente. Hora del servidor: " . $fila['fecha_actual']."<br>";
     //Ejemplo: inserción de datos
     $stmt=$pdo->query("INSERT INTO prueba(contenido) VALUES ('mi comentario')");
     //Ejempo: consultar datos
@@ -41,6 +41,8 @@ try {
     $filas=$stmt->fetchAll();
     foreach($filas as $row){
       echo "fila: ".$row['id']." -- ".$row['comentario']."<br>";
+
+     var_dump($row);
     }
       
 } catch (PDOException $e) {
