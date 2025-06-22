@@ -40,9 +40,7 @@ try {
     $stmt = $pdo->query('SELECT * FROM prueba;');
     $filas=$stmt->fetchAll();
     foreach($filas as $row){
-      echo "fila: ".$row['id']." -- ".$row['comentario']."<br>";
-
-     var_dump($row);
+      echo "<br>fila: ".$row['id']." -- ".$row['contenido']."<br>";
     }
       
 } catch (PDOException $e) {
