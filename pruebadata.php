@@ -35,12 +35,12 @@ try {
     $fila = $stmt->fetch();
     echo "Conectado correctamente. Hora del servidor: " . $fila['fecha_actual'];
     //Ejemplo: inserción de datos
-    $stmt=$pdo->query('INSERT INTO prueba(comentario) VALUES 'mi comentario');
+    $stmt=$pdo->query("INSERT INTO prueba(comentario) VALUES ('mi comentario')");
     //Ejempo: consultar datos
     $stmt = $pdo->query('SELECT * FROM prueba;');
     $filas=$stmt->fetchAll();
     foreach($filas as $row){
-      echo "fila: ".$row['id']." -- ".$row['comentario'];
+      echo "fila: ".$row['id']." -- ".$row['comentario']."<br>";
     }
       
 } catch (PDOException $e) {
